@@ -16,16 +16,16 @@ and [ttools sitesync](https://github.com/titledk/ttools-sitesync-core) installed
 
 You can now add menu items like this:
 
-  Menu:
-    Heading1:
-      Title: Sitesync examples
-      Item1:
-        Title: Overwrite Local Site with Database & Assets from Live Site
-        Command: "ttools/sitesync-core/local/sync-environments.sh Live Local"
-      Item2:
-        Title: Push Database & Assets to Dev Site
-        Command: "ttools/sitesync-core/local/sync-environments.sh Local Dev"
-      Item3:
-        Title: Overwrite Dev Site with Database & Assets from Live Site
-        Command: "ttools/sitesync-core/local/sync-environments.sh Live Dev"      
+    Menu:
+      Heading1:
+        Title: Sitesync examples
+        Item1:
+          Title: Overwrite Local Site with Database & Assets from Live Site
+          Command: "ttools/sitesync-core/local/sync-environments.sh Live Local"
+        Item2:
+          Title: Push Database & Assets to Dev Site
+          Command: "ttools/sitesync-core/local/sync-environments.sh Local Dev"
+        Item3:
+          Title: Overwrite Dev Site with Database & Assets from Live Site
+          Command: "ttools/sitesync-core/local/sync-environments.sh Live Dev"      
         
