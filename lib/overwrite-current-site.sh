@@ -26,7 +26,7 @@ echo "Importing database...";
 
 echo "php path is $ENV_PHPPATH";
 
-$ENV_PHPPATH $MODULEDIR/lib/php/import-db.php $DBNAME
+$ENV_PHPPATH $MODULEDIR/lib/php/import-db.php $DBNAME $ENV_PHPPATH
 
 
 echo "Importing files...";

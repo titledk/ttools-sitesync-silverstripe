@@ -32,7 +32,7 @@ echo "Dumping database...";
 
 echo "php path is $ENV_PHPPATH";
 
-$ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME
+$ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME $ENV_PHPPATH
 
 
 echo "Dumping files...";
