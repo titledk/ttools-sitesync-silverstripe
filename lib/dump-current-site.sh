@@ -8,10 +8,10 @@ FILESDIR=$2
 ENV=$3
 
 
-echo "Supplied variables:";
-echo "DB: $DBNAME";
-echo "Files: $FILESDIR";
-echo "Env: $ENV";
+#echo "Supplied variables:";
+#echo "DB: $DBNAME";
+#echo "Files: $FILESDIR";
+#echo "Env: $ENV";
 
 
 

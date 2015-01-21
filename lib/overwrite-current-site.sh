@@ -8,10 +8,10 @@ FILESDIR=$2
 ENV=$3
 
 
-echo "Supplied variables:";
-echo "DB: $DBNAME";
-echo "Files: $FILESDIR";
-echo "Env: $ENV";
+#echo "Supplied variables:";
+#echo "DB: $DBNAME";
+#echo "Files: $FILESDIR";
+#echo "Env: $ENV";
 
 
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../../.. && pwd )";
@@ -24,7 +24,7 @@ eval `$ENVVARS`
 
 echo "Importing database...";
 
-echo "php path is $ENV_PHPPATH";
+#echo "php path is $ENV_PHPPATH";
 
 $ENV_PHPPATH $MODULEDIR/lib/php/import-db.php $DBNAME $ENV_PHPPATH
 
