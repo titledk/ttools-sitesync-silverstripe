@@ -8,10 +8,10 @@ FILESDIR=$2
 ENV=$3
 
 
-#echo "Supplied variables:";
-#echo "DB: $DBNAME";
-#echo "Files: $FILESDIR";
-#echo "Env: $ENV";
+echo "Supplied variables:";
+echo "DB: $DBNAME";
+echo "Files: $FILESDIR";
+echo "Env: $ENV";
 
 
 
@@ -26,10 +26,11 @@ source $BASEDIR/ttools/core/lib/inc.sh;
 ENVVARS="$BASEDIR/ttools/core/lib/vars-for-env.sh $ENV"
 eval `$ENVVARS`
 
-cd $WP_PATH;
 
 
 echo "Dumping database...";
+
+echo "php path is $ENV_PHPPATH";
 
 $ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME
 

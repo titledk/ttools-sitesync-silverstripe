@@ -8,6 +8,12 @@ FILESDIR=$2
 ENV=$3
 
 
+echo "Supplied variables:";
+echo "DB: $DBNAME";
+echo "Files: $FILESDIR";
+echo "Env: $ENV";
+
+
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../../.. && pwd )";
 MODULEDIR="$BASEDIR/ttools/sitesync-silverstripe";
 SILVERSTRIPE_PATH="$BASEDIR/public";
@@ -17,6 +23,8 @@ eval `$ENVVARS`
 
 
 echo "Importing database...";
+
+echo "php path is $ENV_PHPPATH";
 
 $ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME
 
