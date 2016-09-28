@@ -27,7 +27,9 @@ if (isset($argv[2])) {
 $repoDir = dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/';
 
 $sniffer = $repoDir . 'ttools/thirdparty/sspak/src/sspak-sniffer.php';
-$output = shell_exec("$phppath $sniffer {$repoDir}public");
+$cmd = "$phppath $sniffer {$repoDir}public";
+//echo $cmd;
+$output = shell_exec($cmd);
 
 $parsed = @unserialize($output);
 //var_dump($parsed);
