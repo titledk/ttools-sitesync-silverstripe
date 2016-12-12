@@ -28,7 +28,7 @@ $repoDir = dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/';
 
 $sniffer = $repoDir . 'ttools/thirdparty/sspak/src/sspak-sniffer.php';
 $cmd = "$phppath $sniffer {$repoDir}public";
-//echo $cmd;
+echo 'executing: ' . $cmd . "\n";
 $output = shell_exec($cmd);
 
 $parsed = @unserialize($output);

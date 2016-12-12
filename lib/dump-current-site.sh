@@ -30,7 +30,7 @@ eval `$ENVVARS`
 
 echo "Dumping database...";
 
-echo "DEBUG: " $ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME $ENV_PHPPATH
+echo "executing:" $ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME $ENV_PHPPATH
 $ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME $ENV_PHPPATH
 
 
