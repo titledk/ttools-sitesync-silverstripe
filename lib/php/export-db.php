@@ -16,6 +16,7 @@ $socketInfo = null;
 $cmd = 'mysqldump -u'
 	. $parsed['db_username']
 	. $socketInfo
+	. ' --max_allowed_packet=1024M '
 	. ' -p' . escapeshellarg($parsed['db_password'])
 	. ' -h ' . $parsed['db_server']
 	. ' ' . $parsed['db_database']
