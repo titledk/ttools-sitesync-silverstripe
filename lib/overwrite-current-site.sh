@@ -18,6 +18,10 @@ BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../../.. && pwd )";
 MODULEDIR="$BASEDIR/ttools/sitesync-silverstripe";
 SILVERSTRIPE_PATH="$BASEDIR/public";
 
+VARS="$BASEDIR/ttools/core/lib/vars.sh"
+eval `$VARS`
+
+
 ENVVARS="$BASEDIR/ttools/core/lib/vars-for-env.sh $ENV"
 eval `$ENVVARS`
 

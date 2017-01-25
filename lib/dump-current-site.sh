@@ -23,6 +23,9 @@ FILES_PATHS="$SILVERSTRIPE_PATH/assets"; #this can be one or more paths, separat
 
 source $BASEDIR/ttools/core/lib/inc.sh;
 
+VARS="$BASEDIR/ttools/core/lib/vars.sh"
+eval `$VARS`
+
 ENVVARS="$BASEDIR/ttools/core/lib/vars-for-env.sh $ENV"
 eval `$ENVVARS`
 
