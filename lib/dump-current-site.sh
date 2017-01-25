@@ -36,29 +36,25 @@ $ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME $ENV_PHPPATH
 
 echo "Dumping files...";
 
-#rewriting files dir a little to make sure
-#they are saved relative to the repo root
-FILESDIR="$FILESDIR/public";
-mkdir -p $FILESDIR;
-
-
-
-
-rsyncV=$(rsync --version | egrep -o "([0-9]{1,}\.)+[0-9]{1,}");
-
-echo "rsync version: $rsyncV";
-
-vercomp "$rsyncV" "3.0.9"
-output=$?;
-if [[ $output = 1 ]] 
-then
-	echo "rsync version is 3.1.0 or larger - using progress2"
-	rsync -az --delete --info=progress2 $FILES_PATHS $FILESDIR;
+if [[ "$Sitesync_SkipFiles" == "true" ]]; then
+	echo "Skipping file sync (as per configuration)"
 else
-	echo "rsync version is smaller than 3.1.0 - using verbose mode"
-	rsync -avz --delete $FILES_PATHS $FILESDIR;
+	#rewriting files dir a little to make sure
+	#they are saved relative to the repo root
+	FILESDIR="$FILESDIR/public";
+	mkdir -p $FILESDIR;
+	rsyncV=$(rsync --version | egrep -o "([0-9]{1,}\.)+[0-9]{1,}");
+	echo "rsync version: $rsyncV";
+	vercomp "$rsyncV" "3.0.9"
+	output=$?;
+	if [[ $output = 1 ]]
+	then
+		echo "rsync version is 3.1.0 or larger - using progress2"
+		rsync -az --delete --info=progress2 $FILES_PATHS $FILESDIR;
+	else
+		echo "rsync version is smaller than 3.1.0 - using verbose mode"
+		rsync -avz --delete $FILES_PATHS $FILESDIR;
+	fi
 fi
-
-
 
 

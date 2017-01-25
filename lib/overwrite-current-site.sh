@@ -33,10 +33,13 @@ $CMD
 
 echo "Importing files...";
 
-FILES_TO_IMPORT=$FILESDIR/public/assets/;
+if [[ "$Sitesync_SkipFiles" == "true" ]]; then
+	echo "Skipping file sync (as per configuration)"
+else
+	FILES_TO_IMPORT=$FILESDIR/public/assets/;
+	rsync -avz --delete $FILES_TO_IMPORT $SILVERSTRIPE_PATH/assets;
+fi
 
-
-rsync -avz --delete $FILES_TO_IMPORT $SILVERSTRIPE_PATH/assets;
 
 
 
