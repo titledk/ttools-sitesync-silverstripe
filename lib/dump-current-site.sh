@@ -40,7 +40,9 @@ $ENV_PHPPATH $MODULEDIR/lib/php/export-db.php $DBNAME $ENV_PHPPATH
 echo "Dumping files...";
 
 if [[ "$Sitesync_SkipFiles" == "true" ]]; then
-	echo "Skipping file sync (as per configuration)"
+	echo "Skipping file dump (as per configuration)"
+elif [[ "$FILESDIR" == "false" ]]; then
+	echo "Skipping file dump (as requested per argument)"
 else
 	#rewriting files dir a little to make sure
 	#they are saved relative to the repo root
